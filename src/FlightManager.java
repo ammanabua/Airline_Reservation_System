@@ -39,7 +39,7 @@ public class FlightManager {
             }
             else {
                 System.out.println("Flight doesn't exist in the logs");
-                return null;
+                return flight;
             }
         }
         return flight;
