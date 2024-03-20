@@ -1,6 +1,7 @@
 import java.sql.Array;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.List;
 
 public class FlightManager {
     String flightManagerId;
@@ -38,7 +39,7 @@ public class FlightManager {
             }
             else {
                 System.out.println("Flight doesn't exist in the logs");
-                return null;
+                return flight;
             }
         }
         return flight;
