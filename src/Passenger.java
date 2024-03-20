@@ -35,4 +35,5 @@ public record Passenger(String firstName, String lastName, String email, String 
     public LocalDate dateOfBirth() {
         return dateOfBirth;
     }
+
 }
