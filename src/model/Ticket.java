@@ -1,3 +1,5 @@
+package model;
+
 public class Ticket {
     private String ticketId;
     private String bookingReference;
@@ -5,12 +7,14 @@ public class Ticket {
     private Passenger passenger;
     private Flight flightDetails;
     private Category seatClass;
-    public Ticket() {}
 
-    public Ticket(String ticketId, String bookingReference, String seatNo , Passenger passenger, Flight flightDetails, Category seatClass) {
+    Ticket() {
+
+    }
+
+    Ticket(String ticketId, String bookingReference , Passenger passenger, Flight flightDetails, Category seatClass) {
         this.ticketId = ticketId;
         this.bookingReference = bookingReference;
-        this.seatNo = seatNo;
         this.passenger = passenger;
         this.flightDetails = flightDetails;
         this.seatClass = seatClass;
@@ -38,5 +42,10 @@ public class Ticket {
 
     public Category getSeatClass() {
         return seatClass;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("===============================================\n TICKET INFORMATION %s \n Passenger: %s %s, \n FlightDetails: %s \n Seat: %s \n We are glad to server you at BTSUMMARN Reservations.", ticketId, passenger.getFirstName(), passenger.getLastName(), flightDetails.travelPlans, "24A");
     }
 }
