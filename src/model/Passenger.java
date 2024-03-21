@@ -44,6 +44,13 @@ public class Passenger{
         return dateOfBirth;
     }
 
+    public String getPassengerId() {
+        return passengerId;
+    }
+
+    public Booking getBooking() {
+        return booking;
+    }
 
     public boolean makePayment(String bookingId, double amount){
         return false;

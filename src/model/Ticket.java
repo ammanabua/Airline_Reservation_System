@@ -44,5 +44,8 @@ public class Ticket {
         return seatClass;
     }
 
-
+    @Override
+    public String toString() {
+        return String.format("===============================================\n TICKET INFORMATION %s \n Passenger: %s %s, \n FlightDetails: %s \n Seat: %s \n We are glad to server you at BTSUMMARN Reservations.", ticketId, passenger.getFirstName(), passenger.getLastName(), flightDetails.travelPlans, "24A");
+    }
 }

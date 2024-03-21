@@ -39,6 +39,11 @@ public class TravelPlan {
     }
 
     @Override
+    public String toString(){
+        return String.format("From: %s, To: %s, Date: %s \n", origin, destination, travelDate);
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;

@@ -38,7 +38,7 @@ public class Booking {
 
     @Override
     public String toString() {
-        return String.format("model.Booking: %s, %s, %s, %s", bookingCode, travelPlan.getOrigin(), travelPlan.getDestination(), travelPlan.getTravelDate());
+        return String.format("Booking: %s, %s, %s, %s, For: %s %s", bookingCode, travelPlan.getOrigin(), travelPlan.getDestination(), travelPlan.getTravelDate(), passenger.getFirstName(), passenger.getLastName());
     }
 }
 

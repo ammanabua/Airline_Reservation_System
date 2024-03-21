@@ -32,6 +32,10 @@ public class FlightManager {
         return bookedTravellers;
     }
 
+    public void addBookedTravellers(){
+
+    }
+
     public void createFlight(String flightId, LocalDateTime departure, LocalDateTime arrival, Operator operator, double price, int capacity, String travelPlanId, String origin, String destination, LocalDate travelDate){
         var newFlight = new Flight(flightId, departure, arrival, operator, price, capacity, travelPlanId, origin, destination, travelDate);
 
@@ -102,7 +106,7 @@ public class FlightManager {
         return false;
     }
 
-    private Ticket generateTicket(String bookingCode, double amount, Passenger passenger, String flightId){
+    Ticket generateTicket(String bookingCode, double amount, Passenger passenger, String flightId){
         Ticket ticket = null;
         for(Booking b: bookedTravellers){
             for(Flight f: flights){

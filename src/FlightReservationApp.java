@@ -1,3 +1,4 @@
+import model.Booking;
 import model.FlightManager;
 import model.Operator;
 import model.Passenger;
@@ -13,6 +14,15 @@ public class FlightReservationApp {
         System.out.println("================================================");
 
 
+        FlightManager midWestOne = new FlightManager("MW35238");
+
+        midWestOne.createFlight("LF3528", LocalDateTime.of(2024, 9, 20, 10, 25),LocalDateTime.of(2024, 9, 20, 12, 45), Operator.AMERICAN,500, 250,"32584KH", "ORD", "DSM", LocalDate.of(2024, 3, 24));
+
+        midWestOne.createFlight("MD3853", LocalDateTime.of(2024, 3, 22, 12, 30),LocalDateTime.of(2024, 3, 22, 14,30), Operator.AMERICAN,800, 200,"274359VD", "PHL", "CDR", LocalDate.of(2024, 3, 26));
+
+
+        //Create Passengers
+
         Passenger amman = new Passenger("2345KB", "Amman", "Abua", "amman@gmail.com", "214-582-2352", LocalDate.of(1970, 4, 27), "AE573453", "354536DF","ORD", "DSM", LocalDate.of(2024, 3, 24));
 
         Passenger umar = new Passenger("68346LM", "Umar", "Bunyaminu", "umar@gmail.com", "623-345-3850", LocalDate.of(1980, 5, 9), "ID235894", "34734GD", "PHL", "CDR", LocalDate.of(2024, 3, 24));
@@ -25,14 +35,10 @@ public class FlightReservationApp {
         System.out.println("======================");
         var passengers = List.of(amman, umar, felix, sarah);
 
-        FlightManager midWestOne = new FlightManager("MW35238");
-
-        midWestOne.createFlight("LF3528", LocalDateTime.of(2024, 9, 20, 10, 25),LocalDateTime.of(2024, 9, 20, 12, 45), Operator.AMERICAN,500, 250,"32584KH", "ORD", "DSM", LocalDate.of(2024, 3, 24));
-
-        midWestOne.createFlight("MD3853", LocalDateTime.of(2024, 3, 22, 12, 30),LocalDateTime.of(2024, 3, 22, 14,30), Operator.AMERICAN,800, 200,"274359VD", "PHL", "CDR", LocalDate.of(2024, 3, 26));
 
 
-
+        System.out.println(amman.getBooking());
+        System.out.println(umar.getBooking());
         //Create Bookings
 
 //        amman.addBooking(new model.Booking("4534GH", amman, "ORD", "DSM"));
