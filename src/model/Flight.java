@@ -71,6 +71,6 @@ public class Flight {
 
     @Override
     public String toString(){
-        return String.format("{ %s, model.Flight: %s, TravelPlans: %s, Departure: %s, Arrival: %s }\n", operator.getValue(), flightId, travelPlans, departure, arrival);
+        return String.format("{ %s, Flight: %s, TravelPlans: %s, Departure: %s, Arrival: %s }\n", operator.getValue(), flightId, travelPlans, departure, arrival);
     }
 }

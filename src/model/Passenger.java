@@ -15,6 +15,9 @@ public class Passenger{
 
 
     public Passenger(String passengerId, String firstName, String lastName, String email, String phoneNumber, LocalDate dateOfBirth, String bookingCode, String travelPlanId, String origin, String destination, LocalDate travelDate){
+        if(passengerId == null)
+            throw new IllegalArgumentException("Passenger Id cannot be null");
+
         this.passengerId = passengerId;
         this.firstName = firstName;
         this.lastName = lastName;

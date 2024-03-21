@@ -15,8 +15,6 @@ public class Booking {
         this.passenger = passenger;
         this.bookingDate = LocalDateTime.now();
         this.travelPlan = new TravelPlan(travelPlanId, origin, destination, travelDate);
-
-
     }
 
     public String getBookingCode() {

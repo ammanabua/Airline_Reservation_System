@@ -1,11 +1,10 @@
 package model;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.OptionalDouble;
+import java.util.*;
 import java.util.function.Function;
 
 public class FlightManager {
@@ -46,30 +45,13 @@ public class FlightManager {
         flights.add(f);
     }
 
-    public Flight getFlight(String flightId){
-        Flight flight = null;
-        for(Flight f: flights){
-            if(f.getFlightId().equals(flightId)){
-                flight = f;
-            }
-            else {
-                System.out.println("Flight doesn't exist in the logs");
-                return flight;
-            }
-        }
-        return flight;
+    public Optional<Flight> getFlight(String flightId){
+        return flights.stream()
+                .filter(f -> f.getFlightId().equals(flightId))
+                .findAny();
     }
 
     public OptionalDouble getFlightPrice(String flightId){
-//        double flightPrice = 0.0;
-//        for(Flight f: flights){
-//            if(f.getFlightId().equals(flightId)){
-//                flightPrice += f.getPrice();
-//            }
-//        }
-//
-//        return flightPrice;
-
         return flights.stream()
                 .filter(f -> f.getFlightId().equals(flightId))
                 .mapToDouble(Flight::getPrice)
