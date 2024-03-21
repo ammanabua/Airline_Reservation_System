@@ -1,14 +1,17 @@
 import jdk.jfr.FlightRecorder;
+import model.Category;
+import model.FlightManager;
+import model.Ticket;
 
 import java.time.LocalDateTime;
 
-public class Booking {
+public class jBooking {
     private String bookingCode;
     private LocalDateTime bookingDate;
     private Passenger passenger;
     private String destination;
     private String origin;
-//    String flighManager;
+    //    String flighManager;
     private FlightManager flightManager;
 
     Booking(String bookingCode, Passenger passenger, String origin, String destination) {
@@ -41,21 +44,18 @@ public class Booking {
         return flightManager;
     }
 
-
-
-<<<<<<< HEAD
     private Ticket generateTicket() {
-=======
-    private Ticket generateTicket(String bookingCode, double amount, Passenger passenger, String flightId){
->>>>>>> 53ce858ced9187f68a16699565a3f5d6c802ae2c
 
-        if(!passenger.makePayment(amount, bookingCode, flightId)){
-            System.out.println("Payment Incomplete");
-            return null;
+        private Ticket generateTicket(String bookingCode,double amount, Passenger passenger, String flightId){
+
+
+            if (!passenger.makePayment(amount, bookingCode, flightId)) {
+                System.out.println("Payment Incomplete");
+                return null;
+            }
+            System.out.println("Payment Successful\nGenerating Ticket...");
+            return new Ticket("GKER358", bookingCode, "18A", passenger, flightManager.getFlight(flightId), Category.FIRST_CLASS);
         }
-        System.out.println("Payment Successful\nGenerating Ticket...");
-        return new Ticket("GKER358", bookingCode, "18A", passenger, flightManager.getFlight(flightId), Category.FIRST_CLASS);
+
     }
-
 }
-

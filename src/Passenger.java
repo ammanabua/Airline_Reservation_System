@@ -41,8 +41,6 @@ public class Passenger{
         return dateOfBirth;
     }
 
-<<<<<<< HEAD
-=======
     public List<Booking> getBookings() {
         return bookings;
     }
@@ -72,5 +70,5 @@ public class Passenger{
         System.out.println("Booking Created");
         return newBooking;
     }
->>>>>>> 53ce858ced9187f68a16699565a3f5d6c802ae2c
+
 }
