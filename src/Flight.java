@@ -13,9 +13,9 @@ public class Flight {
     private Operator operator;
     private double price;
     private int capacity;
-    private int bookedSeats;
+    private int bookedSeats = 0;
 
-    public Flight(String flightId, String origin, String destination, LocalDateTime departure, LocalDateTime arrival, Operator operator, double price, int capacity) {
+    Flight(String flightId, String origin, String destination, LocalDateTime departure, LocalDateTime arrival, Operator operator, double price, int capacity) {
         this.flightId = flightId;
         this.origin = origin;
         this.destination = destination;

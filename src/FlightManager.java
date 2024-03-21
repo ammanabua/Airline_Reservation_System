@@ -27,6 +27,12 @@ public class FlightManager {
         return bookedTravellers;
     }
 
+    public void createFlight(String flightId, String origin, String destination, LocalDateTime departure, LocalDateTime arrival, Operator operator, double price, int capacity){
+        var newFlight = new Flight(flightId, origin, destination, departure, arrival, operator, price, capacity);
+
+        flights.add(newFlight);
+    }
+
     public void addFlight(Flight f) {
         flights.add(f);
     }
@@ -46,12 +52,31 @@ public class FlightManager {
     }
 
     public double getFlightPrice(String flightId){
-        var price = 0.0;
+        return flights.stream()
+                .filter(t -> t.getFlightId().equals(flightId))
+                .mapToDouble(Flight::getPrice)
+                .sum();
+    }
+
+    public boolean cancelFlight(String flightId){
         for(Flight f: flights){
             if(f.getFlightId().equals(flightId)){
-                price = f.getPrice();
+                flights.remove(f);
             }
+            System.out.println("Flight Removed");
+            return true;
         }
-        return price;
+        System.out.println("Flight not found");
+        return false;
+    }
+
+    public List<Flight> getAvailableFlights(String origin, String destination, LocalDateTime departure){
+        return flights.stream()
+                .filter(f -> f.getOrigin().equals(origin) && f.getDestination().equals(destination) && f.getDeparture().equals(departure))
+                .toList();
+    }
+
+    public boolean bookSeat(){
+        return false;
     }
 }

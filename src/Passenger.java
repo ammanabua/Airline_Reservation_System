@@ -2,6 +2,7 @@ import java.awt.print.Book;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 
 public class Passenger{
 
@@ -45,14 +46,11 @@ public class Passenger{
         return bookings;
     }
 
-    public Booking getBooking(String bookingId){
-        Booking booking = null;
-        for(Booking b: bookings){
-            if(b.getBookingCode().equals(bookingId)){
-                return booking = b;
-            }
-        }
-        return booking;
+    public Booking getBooking(String bookingCode){
+        Object Supplier;
+        return bookings.stream()
+                .filter(b -> b.getBookingCode().equals(bookingCode))
+                .findAny().orElseThrow();
     }
 
     public boolean makePayment(double amount, String bookingId, String flightId){
@@ -69,5 +67,32 @@ public class Passenger{
         bookings.add(newBooking);
         System.out.println("Booking Created");
         return newBooking;
+    }
+
+    public void addBooking(Booking b){
+        if(b == null){
+            System.out.println("Booking cannot be null");
+        }
+        bookings.add(b);
+        System.out.println("Booking Added");
+    }
+
+    public void cancelBooking(String bookingCode){
+
+    }
+
+    public void modifyBooking(String bookingCode){
+
+    }
+
+    @Override
+    public String toString() {
+        return "Passenger{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
+                '}';
     }
 }

@@ -8,6 +8,7 @@ public class Booking {
     private Passenger passenger;
     private String destination;
     private String origin;
+
 //    String flighManager;
     private FlightManager flightManager;
 
@@ -50,8 +51,19 @@ public class Booking {
             return null;
         }
         System.out.println("Payment Successful\nGenerating Ticket...");
-        return new Ticket("GKER358", bookingCode, "18A", passenger, flightManager.getFlight(flightId), Category.FIRST_CLASS);
+        return new Ticket("GKER358", bookingCode, passenger, flightManager.getFlight(flightId), Category.FIRST_CLASS);
     }
 
+    @Override
+    public String toString() {
+        return "Booking{" +
+                "bookingCode='" + bookingCode + '\'' +
+                ", bookingDate=" + bookingDate +
+                ", passenger=" + passenger +
+                ", destination='" + destination + '\'' +
+                ", origin='" + origin + '\'' +
+                ", flightManager=" + flightManager +
+                '}';
+    }
 }
 

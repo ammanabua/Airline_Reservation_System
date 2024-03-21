@@ -1,5 +1,13 @@
 public enum Operator {
-    AMERICAN,
-    DELTA,
-    NORTHERN,SPIRIT, UNITED;
+    AMERICAN("American Airlines"),
+    DELTA("Delta Airlines"),
+    NORTHERN("Northern Airlines"),
+    SPIRIT("Fly Spirit"),
+    UNITED("United Airlines");
+
+    private String value;
+
+    Operator(String value){
+        this.value = value;
+    }
 }

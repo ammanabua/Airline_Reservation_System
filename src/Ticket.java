@@ -5,12 +5,14 @@ public class Ticket {
     private Passenger passenger;
     private Flight flightDetails;
     private Category seatClass;
-    public Ticket() {}
 
-    public Ticket(String ticketId, String bookingReference, String seatNo , Passenger passenger, Flight flightDetails, Category seatClass) {
+    Ticket() {
+
+    }
+
+    Ticket(String ticketId, String bookingReference , Passenger passenger, Flight flightDetails, Category seatClass) {
         this.ticketId = ticketId;
         this.bookingReference = bookingReference;
-        this.seatNo = seatNo;
         this.passenger = passenger;
         this.flightDetails = flightDetails;
         this.seatClass = seatClass;
