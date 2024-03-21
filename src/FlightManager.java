@@ -44,4 +44,14 @@ public class FlightManager {
         }
         return flight;
     }
+
+    public double getFlightPrice(String flightId){
+        var price = 0.0;
+        for(Flight f: flights){
+            if(f.getFlightId().equals(flightId)){
+                price = f.getPrice();
+            }
+        }
+        return price;
+    }
 }
