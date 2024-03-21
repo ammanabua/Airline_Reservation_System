@@ -1,3 +1,5 @@
+package model;
+
 public class Ticket {
     private String ticketId;
     private String bookingReference;
@@ -41,4 +43,6 @@ public class Ticket {
     public Category getSeatClass() {
         return seatClass;
     }
+
+
 }

@@ -1,3 +1,5 @@
+package model;
+
 public enum Operator {
     AMERICAN("American Airlines"),
     DELTA("Delta Airlines"),
@@ -9,5 +11,9 @@ public enum Operator {
 
     Operator(String value){
         this.value = value;
+    }
+
+    public String getValue() {
+        return value;
     }
 }

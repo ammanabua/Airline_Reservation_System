@@ -1,3 +1,5 @@
+package model;
+
 public enum Category {
     FIRST_CLASS("First Class", 10),
     BUSINESS("Business Class", 5),
