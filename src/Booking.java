@@ -38,7 +38,7 @@ public class Booking {
 
 
 
-    private Ticket generateTicket(){
+    private Ticket generateTicket() {
 
     }
 
